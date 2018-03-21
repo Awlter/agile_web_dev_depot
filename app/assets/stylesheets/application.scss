@@ -95,3 +95,20 @@ header.main {
     padding: 0.5em;
   }
 }
+
+@keyframes highlight {
+  0% {
+    background: #8f8;
+  }
+  100% {
+    background: none;
+  }
+}
+
+.line-item-highlight {
+  animation: highlight 1s;
+}
+
+.product-item-hightlight {
+  animation: highlight 1s; 
+}

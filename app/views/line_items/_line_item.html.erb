@@ -2,4 +2,5 @@
   <td class="quantity"><%= line_item.quantity %></td>
   <td><%= line_item.product.title %></td>
   <td class="price"><%= number_to_currency(line_item.product.price) %></td>
+  <td><%= button_to '-1', line_item, method: :delete, remote: true %></td>
 </tr>

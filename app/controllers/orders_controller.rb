@@ -15,7 +15,7 @@ class OrdersController < ApplicationController
       if @order.save
         Cart.destroy(session[:cart_id])
         session[:cart_id] = nil
-        OrderMailer.received(@order).deliver_later
+        ChargeOrderJob.perform_later(@order, pay_type_params.to_h)
         format.html { redirect_to store_index_url, notice: 'Thank your for your order.'}
       else
         format.html { render :new}
@@ -32,7 +32,7 @@ class OrdersController < ApplicationController
   end 
 
   def order_params
-    params.require(:order).permit!
+    params.require(:order).permit(:name, :address, :email, :pay_type)
   end
 
   def pay_type_params

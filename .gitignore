@@ -29,3 +29,6 @@ yarn-debug.log*
 
 .idea
 .idea/*
+
+tags
+tags/*

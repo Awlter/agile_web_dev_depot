@@ -43,6 +43,10 @@ class UsersController < ApplicationController
   # PATCH/PUT /users/1
   # PATCH/PUT /users/1.json
   def update
+    if @user.validate(params[:old_password])
+      raise User::Error.new "Old password doesn't correct"
+    end
+
     respond_to do |format|
       if @user.update(user_params)
         format.html { redirect_to users_url, notice: "User #{@user.name} was successfully updated." }
@@ -59,9 +63,14 @@ class UsersController < ApplicationController
   def destroy
     @user.destroy
     respond_to do |format|
-      format.html { redirect_to users_url, notice: 'User was successfully destroyed.' }
+      format.html { redirect_to users_url,
+        notice: 'User was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  rescue_from "User::Error" do |exception|
+    redirect_to users_url, notice: exception.message
   end
 
   private

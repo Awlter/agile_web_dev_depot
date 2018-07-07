@@ -110,7 +110,7 @@ header.main {
 }
 
 .product-item-hightlight {
-  animation: highlight 1s; 
+  animation: highlight 1s;
 }
 
 .depot_form {
@@ -171,7 +171,7 @@ header.main {
         color: red;
         font-size: 1em;
       }
-    } 
+    }
   }
   .field_with_errors {
     background: none;
@@ -181,10 +181,29 @@ header.main {
       font-weight: bold;
     }
     label::before {
-      content: "! "; 
+      content: "! ";
     }
     input,textarea {
       background: pink;
     }
+  }
+}
+
+nav.logged_in_nav {
+  border-top: solid thin #bfb;
+  padding: 0.354em 0;
+  margin-top: 0.354em;
+  input[type="submit"] {
+    background: none;
+    border: none;
+    color: #bfb;
+    font-size: 1em;
+    letter-spacing: 0.354em;
+    margin: 0;
+    padding: 0;
+    text-transform: uppercase;
+  }
+  input[type="submit"]:hover {
+    color: white;
   }
 }

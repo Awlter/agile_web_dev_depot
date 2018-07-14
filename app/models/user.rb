@@ -3,7 +3,6 @@ class User < ApplicationRecord
   has_secure_password
 
   after_destroy :ensure_an_admin_remains
-  after_update :validate_current_password
 
   class Error < StandardError; end
 

@@ -12,23 +12,23 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :name %>
+    <%= f.label :name, t('.name') %>
     <%= f.text_field :name, id: :order_name, size: 40 %>
   </div>
 
   <div class="field">
-    <%= f.label :address %>
+    <%= f.label :address, t('.address_html') %>
     <%= f.text_area :address, id: :order_address, rows: 3, cols: 40 %>
   </div>
 
   <div class="field">
-    <%= f.label :email  %>
+    <%= f.label :email, t('.email')  %>
     <%= f.email_field :email, id: :order_email, size: 40 %>
   </div>
 
   <div id="pay-type-component"></div>
 
   <div class="actions">
-    <%= f.submit 'Place Order' %>
+    <%= f.submit t('.submit') %>
   </div>
 <% end %>

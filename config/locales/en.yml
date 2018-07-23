@@ -1,4 +1,4 @@
- Files in the config/locales directory are used for internationalization
+# Files in the config/locales directory are used for internationalization
 # and are automatically loaded by Rails. If you want to use locales other
 # than English, add the necessary files in this directory.
 #
@@ -59,8 +59,6 @@ en:
         expiration_date: "Expiry"
       purchase_order_pay_type:
         po_number: "PO #"
-credit_card:
-purchase_order: "Purchase Order"
   store:
     index:
       title_html:  "The Pracmatice Bookshelf"

@@ -36,6 +36,10 @@ gem 'i18n-js'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 # gem "haml-rails", "~> 1.0"
+gem 'phonelib'
+gem "protobuf"
+
+gem 'roo'
 
 gem 'activemodel-serializers-xml'
 group :development, :test do
